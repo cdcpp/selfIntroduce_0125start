@@ -1,5 +1,7 @@
 package selfIntro.main.persistence;
 
+import static org.junit.Assert.fail;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -23,7 +25,6 @@ public class JDBCTests {
 		try (Connection con = 
 				DriverManager.getConnection(
 						"jdbc:mariadb://HOST_ADDRESS:PORT_NUMBER/DB_NAME?user=USER_NAME&password=PASSWORD")) {
-			Log4j.info(con);
 			if(con != null) {
 				System.out.println("DB Connection Success!");
 			}
