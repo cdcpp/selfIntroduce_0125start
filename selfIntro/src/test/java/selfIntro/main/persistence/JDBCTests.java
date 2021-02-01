@@ -24,7 +24,7 @@ public class JDBCTests {
 	public void testConnection() {
 		try (Connection con = 
 				DriverManager.getConnection(
-						"jdbc:mariadb://HOST_ADDRESS:PORT_NUMBER/DB_NAME?user=USER_NAME&password=PASSWORD")) {
+						"jdbc:mariadb://database-ppdev.cmh4swumcvxu.us-east-2.rds.amazonaws.com:3306/selfIntro?user=admin&password=111qqq1!")) {
 			if(con != null) {
 				System.out.println("DB Connection Success!");
 			}
