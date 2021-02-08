@@ -9,6 +9,51 @@
 	src="/resources/jquery-3.5.1/jquery-3.5.1.min.js"></script>
 <script type="text/javascript"
 	src="/resources/bootstrap-4.3.1/js/bootstrap.js"></script>
+<script>
+	$(document).ready(function() {
+
+		$.ajax({
+			url : "/miniboard/getMiniBoardList.do",
+			type : "get",
+			data : {
+				test : "1"
+			},
+			dataType : "JSON",
+			success : function(data) {
+
+				let list = data.list;
+				const size = list.length;
+				let tbody = "";
+
+				if (size > 0) {
+
+					for (var i = 0; i < size; i++) {
+
+						tbody += "<tr>";
+						tbody += "<td>" + list[i].seq + "</td>";
+						tbody += "<td>" + list[i].title + "</td>";
+						tbody += "<td>" + list[i].regId + "</td>";
+						tbody += "<td>" + list[i].regDt + "</td>";
+						tbody += "</tr>";
+
+					};
+					
+
+					$("#ajaxTbody").html(tbody);
+
+				} else {
+
+				}
+
+			},
+			error : function() {
+				alert("반란군이다");
+			}
+		});
+
+	});
+</script>
+
 <title>MiniBoard</title>
 </head>
 <body>
@@ -20,12 +65,9 @@
 				<th>작성자</th>
 				<th>등록시간</th>
 			</tr>
-			<tr>
-				<td>1</td>
-				<td>테스트</td>
-				<td>미니스타</td>
-				<td>20210207</td>
-			</tr>
+			<tbody id="ajaxTbody">
+
+			</tbody>
 		</table>
 		<hr>
 		<a class="btn btn-outline-dark">글작성</a>

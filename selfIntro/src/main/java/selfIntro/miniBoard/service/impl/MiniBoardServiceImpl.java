@@ -1,6 +1,8 @@
 package selfIntro.miniBoard.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -19,12 +21,18 @@ public class MiniBoardServiceImpl implements MiniBoardService {
 	MiniBoardMapper mapper;
 	
 	@Override
-	public List<MiniBoardVO> getMiniBoardList(HttpServletRequest request) throws Exception {
+	public Map<String, Object> getMiniBoardList(HttpServletRequest request) throws Exception {
+		
+		//return map
+		Map<String, Object> map = new HashMap<String, Object>();
 		
 		
 		List<MiniBoardVO> list = mapper.getMiniBoardList();
 		
-		return list;
+		map.put("list",list);
+		
+		
+		return map;
 	}
 	
 }
