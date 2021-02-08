@@ -1,6 +1,8 @@
 package selfIntro.miniBoard.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -35,12 +37,14 @@ public class MiniBoardController {
 	// 미니보드 게시글 리스트 가져오기 
 		@RequestMapping("/getMiniBoardList.do")
 		@ResponseBody
-		public List<MiniBoardVO> getMiniBoardList(HttpServletRequest request) throws Exception {
+		public Map<String, Object> getMiniBoardList(HttpServletRequest request) throws Exception {
 			
-			List<MiniBoardVO> list = service.getMiniBoardList(request);
-			System.out.println(list);
 			
-			return list;
+			
+			Map<String, Object> map = service.getMiniBoardList(request);
+			
+			
+			return map;
 			
 		}
 	
