@@ -28,14 +28,14 @@
 				if (size > 0) {
 
 					for (var i = 0; i < size; i++) {
-
+						
 						tbody += "<tr>";
 						tbody += "<td>" + list[i].seq + "</td>";
 						tbody += "<td>" + list[i].title + "</td>";
 						tbody += "<td>" + list[i].regId + "</td>";
 						tbody += "<td>" + list[i].regDt + "</td>";
 						tbody += "</tr>";
-
+						
 					};
 					
 
@@ -57,6 +57,26 @@
 <title>MiniBoard</title>
 </head>
 <body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="navbar-brand" href="#">
+    	Portfolio of Portfolio
+  	</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Portfolio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Introduce</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">MiniBoard</a>
+    </li>
+  </ul>
+</nav>
+	
+
 	<div class="container">
 		<table class="table table-striped">
 			<tr>
@@ -66,7 +86,7 @@
 				<th>등록시간</th>
 			</tr>
 			<tbody id="ajaxTbody">
-
+				
 			</tbody>
 		</table>
 		<hr>
